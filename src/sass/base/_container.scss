@@ -4,6 +4,8 @@
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 40px;
   // @media screen and (min-width: 480px) {
   //   width: 480px;
   // }
@@ -11,7 +13,8 @@
     width: 768px;
     padding-left: 75px;
     padding-right: 75px;
-    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 50px;
   }
   @media screen and (min-width: 1024px) {
     width: 1024px;

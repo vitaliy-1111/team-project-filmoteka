@@ -1,12 +1,17 @@
-.cards {
+.container-cards {
+  @media screen and (max-width: 767px) {
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 50px;
+  }
 }
 
 .card-list {
   padding: 0;
-
-  @media screen and (max-width: 767px) {
-    margin-top: 20px;
-  }
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -16,6 +21,12 @@
 }
 
 .card-item {
+  &:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     margin: 15px;
     width: calc((100% - 4 * 15px) / 2);

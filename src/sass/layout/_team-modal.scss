@@ -1,5 +1,4 @@
 .modal-overlay {
-  // display: none;
   position: fixed;
 
   display: flex;
@@ -13,9 +12,12 @@
   background-color: rgba(0, 0, 0, 0.25);
 
   z-index: 1000;
+  &.is-hidden {
+    display: none;
+  }
 }
 
-body {
+body.onOpenModal {
   overflow: hidden;
 }
 
@@ -68,6 +70,7 @@ body {
 
 .card-set {
   display: flex;
+  // display: none;
 }
 
 .card-wrapper {

@@ -1,0 +1,68 @@
+.backdrop {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  opacity: 0.25;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 280px;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+}
+
+.close-btn {
+  width: 30px;
+  height: 30px;
+  color: black;
+}
+
+.modal-film-card {
+  width: 240px;
+  height: 356.57px;
+
+  background-color: aquamarine;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.modal-film-title {
+  color: #000000;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+
+  padding-left: 20px;
+}
+
+.modal-film-info {
+  width: 191px;
+  height: 16px;
+
+  background-color: aquamarine;
+}
+
+.modal-film-about__text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+
+  color: black;
+}
+
+.modal-film-info__list {
+  list-style: none;
+}

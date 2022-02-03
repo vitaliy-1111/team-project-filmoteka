@@ -7,4 +7,4 @@ const e={body:document.querySelector("body"),modalBtn:document.querySelector(".i
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./JS/header/header");var e=r(require("./js/team-modal"));function r(e){return e&&e.__esModule?e:{default:e}}
 },{"./sass/main.scss":"clu1","./JS/header/header":"V69e","./js/team-modal":"SVxB"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-filmoteka/src.f4ffda45.js.map
+//# sourceMappingURL=/team-project-filmoteka/src.2b0b4665.js.map

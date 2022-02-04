@@ -74,7 +74,7 @@ function markupHome() {
       </ul>
     </div>
     <div class="form-box">
-      <form class="form">
+      <form class="form" id="search-form">
         <img
           class="form__icon"
           alt="search"

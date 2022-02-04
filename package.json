@@ -26,6 +26,9 @@
     "sass": "^1.32.8"
   },
   "dependencies": {
+    "axios": "^0.25.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.throttle": "^4.1.1",
     "module-name": "0.0.1-security"
   }
 }

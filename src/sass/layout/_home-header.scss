@@ -1,25 +1,42 @@
 .page-header__container {
   height: 230px;
   width: 100%;
+  background: black;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/home-heder320.jpg);
+    url(/images/home-heder-bg320.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 41px;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/home-heder-bg320-2x.jpg);
+  }
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/home-heder768.jpg);
+      url(/images/home-heder-bg768.jpg);
     max-width: 768px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/home-heder-bg768-2x.jpg);
+    }
   }
 
   @media screen and (min-width: 1024px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/home-heder.jpg);
+      url(/images/home-heder-bg.jpg);
     max-width: 1024px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/home-heder-bg-2x.jpg);
+    }
   }
 }
 
-.logo {
+.menu__logo {
   display: flex;
   align-items: center;
   color: $color-header-text;
@@ -28,7 +45,7 @@
   line-height: 1.17;
 }
 
-.logo_label {
+.menu__logo-label {
   margin-left: 10px;
   display: block;
   @media screen and (max-width: 768px) {
@@ -41,8 +58,7 @@
 
   justify-content: space-between;
   align-items: center;
-  padding-top: 41px;
-  padding-bottom: 41px;
+  margin-bottom: 41px;
 }
 
 .menu__list {
@@ -128,7 +144,7 @@
 .form__icon {
   position: absolute;
   right: 0%;
-  margin-top: 4px;
+  top: 4px;
   z-index: 1;
   color: #4f5b66;
 }

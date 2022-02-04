@@ -1,21 +1,38 @@
 .library-page-header__container {
   height: 230px;
   width: 100%;
+  background: black;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    url(/images/library-header-320.jpg);
+    url(/images/library-header-bg320.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: 41px;
+
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+      url(/images/library-header-bg320-2x.jpg);
+  }
 
   @media screen and (min-width: 768px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/library-header-768.jpg);
+      url(/images/library-header-bg768.jpg);
     max-width: 768px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/library-header-bg768-2x.jpg);
+    }
   }
 
   @media screen and (min-width: 1024px) {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(/images/library-header.jpg);
+      url(/images/library-header-bg.jpg);
     max-width: 1024px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+        url(/images/library-header-bg-2x.jpg);
+    }
   }
 }
 

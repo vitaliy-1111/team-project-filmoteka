@@ -1,15 +1,19 @@
-import { fetchMovies, fetchGenres } from "../gallery/fetch-gallery";
-import { MoviesCards } from "../gallery/gallery-tpl";
+import { fetchMovies } from "./fetch-gallery";
+import { MoviesCards } from "./gallery-tpl";
+
+renderStartPage();
+
+export function renderStartPage() {
+    fetchMovies().then(response => {
+        response.results
+        MoviesCards(response.results);
+    })
+}
 
 
 
-fetchMovies().then(response => {
-    response.results
-    MoviesCards(response.results);
-    console.log(response.results)    
-});
 
-fetchGenres().then(response => {
-    console.log(response.genres);
-})
+
+
+ 
 

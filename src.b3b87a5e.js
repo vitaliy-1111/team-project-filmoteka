@@ -15,4 +15,4 @@ const e={body:document.querySelector("body"),modalBtn:document.querySelector(".i
 },{"./fetch-gallery":"LI1G","./gallery-tpl":"eMI9"}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./JS/header/header");var e=a(require("./js/team-modal")),r=require("./js/gallery/render-page-gall");function a(e){return e&&e.__esModule?e:{default:e}}
 },{"./sass/main.scss":"clu1","./JS/header/header":"V69e","./js/team-modal":"SVxB","./js/gallery/render-page-gall":"ekai"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-filmoteka/src.39baebfd.js.map
+//# sourceMappingURL=/team-project-filmoteka/src.b3b87a5e.js.map

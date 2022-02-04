@@ -57,6 +57,7 @@
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 4px;
+  cursor: pointer;
 
   transition-duration: 250ms;
   transition-timing-function: var(--cubic-bezier);
@@ -66,6 +67,6 @@
   }
 }
 
-.image_thumb img {
-  margin-bottom: 10px;
+.image_thumb-img {
+  padding-bottom: 10px;
 }

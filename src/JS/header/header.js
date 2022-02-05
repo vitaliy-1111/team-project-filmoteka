@@ -47,8 +47,8 @@ function markupLibrary() {
       </ul>
     </div>
     <div class="btn-box">
-      <button class="library-btn">Watched</button>
-      <button class="library-btn">Queue</button>
+      <button class="library-btn" data-type="watched">Watched</button>
+      <button class="library-btn" data-type="queue">Queue</button>
     </div>
   </div>`;
 }

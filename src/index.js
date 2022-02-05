@@ -8,3 +8,4 @@ import { fetchCard } from './js/gallery/render-page-gall';
 
 import './JS/header/header-search';
 import './sass/main.scss';
+import './JS/header/library-header';

@@ -11,16 +11,13 @@ const paginationOptions = {
 }
 const homePagination = new Pagination('#tui-pagination-container', paginationOptions);
 const homepPaginationPage = homePagination.getCurrentPage();
-const loader = document.querySelector('.gallery-spinner');
 
 renderStartPage();
 
 export function renderStartPage() {
-  loader.classList.remove('visually-hidden');
     fetchMovies(homepPaginationPage).then(response => {
-      homePagination.reset(response.total_pages);
-      MoviesCards(response.results);      
-      loader.classList.add('visually-hidden')
+        homePagination.reset(response.total_pages);
+        MoviesCards(response.results);
     })
     homePagination.on('afterMove', (event) => {
     const currentPage = event.page;

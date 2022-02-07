@@ -1,4 +1,4 @@
-import './JS/header/header';
+import './js/header/header';
 
 import defaultExport from './js/team-modal';
 
@@ -6,6 +6,6 @@ import defaultExport from './js/team-modal';
 
 import { fetchCard } from './js/gallery/render-page-gall';
 
-import './JS/header/header-search';
+import './js/header/header-search';
 import './sass/main.scss';
-import './JS/header/library-header';
+import './js/header/library-header';

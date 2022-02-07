@@ -12,6 +12,8 @@ const paginationOptions = {
 const homePagination = new Pagination('#tui-pagination-container', paginationOptions);
 const homepPaginationPage = homePagination.getCurrentPage();
 const loader = document.querySelector('.gallery-spinner');
+const pagination = document.querySelector('.tui-pagination');
+pagination.classList.add('visually-hidden');
 
 renderStartPage();
 
@@ -21,10 +23,15 @@ export function renderStartPage() {
         homePagination.reset(response.total_pages);
       MoviesCards(response.results);
       loader.classList.add('visually-hidden')
+      pagination.classList.remove('visually-hidden');
     })
-    homePagination.on('afterMove', (event) => {
+  homePagination.on('afterMove', (event) => {
+      loader.classList.remove('visually-hidden')
     const currentPage = event.page;
-    fetchMovies(currentPage).then((response) => MoviesCards(response.results));
+    fetchMovies(currentPage).then((response) => {
+      MoviesCards(response.results);
+      loader.classList.add('visually-hidden');
+    });
   });
 }
 

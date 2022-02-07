@@ -2,7 +2,7 @@ const refs = {
   body: document.querySelector('body'),
   modalBtn: document.querySelector('.modal-icon-close'),
   modalOverlay: document.querySelector('.cinema-modal-overlay'),
-  cinemaModalCardOpen: document.querySelector('.card-item'),
+  cinemaModalCardOpen: document.querySelector('.card-list'),
 
 }
 

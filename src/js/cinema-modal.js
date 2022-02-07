@@ -20,4 +20,4 @@ function closeModal () {
   refs.modalOverlay.classList.add('is-hidden');
   refs.modalBtn.removeEventListener('click', closeModal);
 }
-//test
+

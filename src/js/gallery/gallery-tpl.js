@@ -10,12 +10,15 @@ export function MoviesCards (results){
   const markup = results.map(
     ({ title, id, poster_path, release_date, genre_ids, vote_average }) => {
       const genreName = renderGenres(genre_ids, allGenres)
+       if (!release_date) {
+        release_date = ' ';
+      }
       const year = release_date.slice(0, 4) 
       let URL = 'https://image.tmdb.org/t/p/w500';
       if (poster_path === null) {
         URL = 'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-%27;';
       }
-      return `<li class="list card-item">
+           return `<li class="list card-item">
             <div class="image_thumb">
               <img class="image_thumb-img" src="${URL}${poster_path || ''}" alt="${title}" id="${id}" loading="lazy">
               <span class="content_average ${vote_average === 0 ? vote_average='visually-hidden' : vote_average}">${vote_average}</span>

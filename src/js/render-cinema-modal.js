@@ -85,7 +85,7 @@ export function renderModalCinemaCard() {
                     <button class="modal-button">ADD TO QUEUE</button>
                 </div>
             </div>
-    </div>`;
+              </div>`;
             document.querySelector(".modal__cinema").innerHTML = cinemaCard;
 
   

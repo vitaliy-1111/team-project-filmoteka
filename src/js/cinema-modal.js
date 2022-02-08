@@ -1,3 +1,6 @@
+// import { MoviesCards } from './gallery/gallery-tpl';
+// import { fetchMovies } from './gallery/fetch-gallery';
+
 const refs = {
   body: document.querySelector('body'),
   modalBtn: document.querySelector('.modal-icon-close'),
@@ -9,15 +12,16 @@ const refs = {
 refs.cinemaModalCardOpen.addEventListener('click', openModal);
 
 
-function openModal() {
+
+function openModal(e) {
   refs.body.classList.add('onOpenModal');
   refs.modalOverlay.classList.remove('is-hidden');
   refs.modalBtn.addEventListener('click', closeModal);
-}
   
-function closeModal () {
-  refs.body.classList.remove('onOpenModal');
-  refs.modalOverlay.classList.add('is-hidden');
-  refs.modalBtn.removeEventListener('click', closeModal);
+  
+  function closeModal() {
+    refs.body.classList.remove('onOpenModal');
+    refs.modalOverlay.classList.add('is-hidden');
+    refs.modalBtn.removeEventListener('click', closeModal);
+  }
 }
-

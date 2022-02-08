@@ -1,10 +1,16 @@
 import { allGenres, renderGenres } from './gallery/genres'
+import { fetchMovies } from "./gallery/fetch-gallery";
 
 const refs = {
-  cardList: document.querySelector('.card-list'),
+  cardList: document.querySelector('.card-item'),
   contentText: document.querySelector('.content')
 };
 
+// if (e.target.classList.contains('.see-more')) {
+    
+//     fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${keyAPI}&page=${page}`)
+//         .then(resp => resp.json())
+//   }
 
 export function renderModalCinemaCard(cinema) {
     const cinemaCard = cinema.map(

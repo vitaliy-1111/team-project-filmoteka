@@ -1,7 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import ApiServiceFetchMovies from './ApiServiceFetchMovies';
-import { MoviesCards } from './markup';
+import { MoviesCards } from '../gallery/gallery-tpl';
 import { renderStartPage } from '../gallery/render-page-gall';
 
 const debounce = require('lodash.debounce');

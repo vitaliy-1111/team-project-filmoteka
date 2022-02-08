@@ -21,6 +21,15 @@
 }
 
 .card-item {
+  position: relative;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.03);
+
+    transition-duration: 250ms;
+  }
+
   &:not(:last-child) {
     @media screen and (max-width: 767px) {
       margin-bottom: 20px;
@@ -44,21 +53,11 @@
   text-transform: uppercase;
 }
 
-.card-item:hover .content_title {
-  transform: rotateY(180deg);
-  transition-duration: 250ms;
-}
-
 .content_text {
   font-weight: 500;
   font-size: 12px;
   line-height: 1.33;
   color: #ff6b08;
-}
-
-.card-item:hover .content_text {
-  transform: rotateY(180deg);
-  transition-duration: 250ms;
 }
 
 .content_average {
@@ -83,25 +82,21 @@
 .image_thumb {
   display: flex;
   flex-direction: column;
-  margin-bottom: 10px;
-  padding: 5px;
+  padding-bottom: 10px;
+  min-height: 398px;
+
   border-radius: 4px;
   cursor: pointer;
+  min-height: 398px;
 
   transform: scale(1);
   transition: transform 250ms linear;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.03);
-    box-shadow: 0px 0px 21px 5px rgba(16, 17, 17, 0.5);
-    transition-duration: 250ms;
-  }
 }
 
 .image_thumb-img {
-  padding-bottom: 10px;
-  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .gallery-buttons {
@@ -139,6 +134,7 @@
 
   &:hover,
   &:focus {
+    transition-delay: 100ms;
     background: #ff6b01;
     cursor: pointer;
   }
@@ -156,21 +152,19 @@
 .card-item:hover .image-btn {
   bottom: 0;
   left: 0;
-  transition-delay: 250ms;
-  transform: rotateY(180deg);
+  transition-delay: 150ms;
   opacity: 1;
 }
 
 .card-item:hover .image_thumb {
   transform: translateY(-100px);
-  transition: all 0.9s;
+  transition-duration: 250ms;
   transform: rotateY(180deg);
-  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .card-item:hover .image_thumb-img {
   filter: blur(3px);
-  transition-delay: 250ms;
+  transition-duration: 250ms;
 }
 
 .gallery-spinner {

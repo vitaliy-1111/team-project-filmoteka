@@ -10,3 +10,8 @@ import { fetchCard } from './js/gallery/render-page-gall';
 import './js/header/header-search';
 import './sass/main.scss';
 import './js/header/library-header';
+
+renderModalCinemaCard();
+
+
+

@@ -1,12 +1,21 @@
 import { markupLibrary, markupHome } from './markup';
-import { renderLibraryGallaryQueue,renderLibraryGallaryWatched, renderEmptyGallery} from '../renderLibrary.js';
-import {renderStartPage} from '../gallery/render-page-gall'
+import {
+  renderLibraryGallaryQueue,
+  renderLibraryGallaryWatched,
+  renderEmptyGallery,
+} from '../renderLibrary.js';
+import { renderStartPage } from '../gallery/render-page-gall';
+import { onSearch } from './header-search';
+
+const debounce = require('lodash.debounce');
 
 const refs = {
   home: document.querySelector('.menu__list-link--home'),
   library: document.querySelector('.menu__list-link--library'),
   header: document.querySelector('.page-header'),
   logo: document.querySelector('.menu__logo'),
+  form: document.querySelector('#search-form'),
+  error: document.querySelector('.form__error-message'),
 };
 
 refs.library.addEventListener('click', onLibrary);
@@ -20,11 +29,11 @@ function onLibrary(e) {
   document.querySelector('.menu__list-link--library').addEventListener('click', onLibrary);
   document.querySelector('.menu__list-link--home').addEventListener('click', onHome);
   document.querySelector('.menu__logo').addEventListener('click', onHome);
-  document.querySelector('.library-queue').addEventListener('click', onLibraryQueueBtn)
-  document.querySelector('.library-watched').addEventListener('click', onLibraryWatchedBtn)
-  document.querySelector(".library-watched").classList.add("library-button--active");
-  document.querySelector('.tui-pagination').classList.add('visually-hidden')
-  const localMovies = JSON.parse(localStorage.getItem("watchedList"));
+  document.querySelector('.library-queue').addEventListener('click', onLibraryQueueBtn);
+  document.querySelector('.library-watched').addEventListener('click', onLibraryWatchedBtn);
+  document.querySelector('.library-watched').classList.add('library-button--active');
+  document.querySelector('.tui-pagination').classList.add('visually-hidden');
+  const localMovies = JSON.parse(localStorage.getItem('watchedList'));
   if (localMovies === null) {
     renderEmptyGallery();
   } else {
@@ -38,26 +47,26 @@ function onHome(e) {
   document.querySelector('.menu__list-link--home').addEventListener('click', onHome);
   document.querySelector('.menu__list-link--library').addEventListener('click', onLibrary);
   document.querySelector('.menu__logo').addEventListener('click', onHome);
+  document.querySelector('#search-form').addEventListener('input', debounce(onSearch, 1000));
   renderStartPage();
-  
 }
 function onLibraryQueueBtn() {
-    document.querySelector(".library-queue").classList.add("library-button--active");
-  document.querySelector(".library-watched").classList.remove("library-button--active");
-  const localMovies = JSON.parse(localStorage.getItem("queueList"));
-    if (localMovies === null) {
-      renderEmptyGallery();
-    } else {
-      renderLibraryGallaryQueue(localMovies);
-    }
+  document.querySelector('.library-queue').classList.add('library-button--active');
+  document.querySelector('.library-watched').classList.remove('library-button--active');
+  const localMovies = JSON.parse(localStorage.getItem('queueList'));
+  if (localMovies === null) {
+    renderEmptyGallery();
+  } else {
+    renderLibraryGallaryQueue(localMovies);
+  }
 }
 function onLibraryWatchedBtn() {
-  document.querySelector(".library-queue").classList.remove("library-button--active");
-  document.querySelector(".library-watched").classList.add("library-button--active");
-  const localMovies = JSON.parse(localStorage.getItem("watchedList"));
+  document.querySelector('.library-queue').classList.remove('library-button--active');
+  document.querySelector('.library-watched').classList.add('library-button--active');
+  const localMovies = JSON.parse(localStorage.getItem('watchedList'));
   if (localMovies === null) {
-      renderEmptyGallery();
-    } else {
-      renderLibraryGallaryWatched(localMovies);
+    renderEmptyGallery();
+  } else {
+    renderLibraryGallaryWatched(localMovies);
   }
 }

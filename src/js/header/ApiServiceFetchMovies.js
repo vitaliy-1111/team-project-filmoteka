@@ -4,13 +4,13 @@ export default class MoviesSearchApiService {
   constructor() {
     this.serchQuery = '';
     this.page = 1;
+    this.id = 0;
   }
 
-  fetchPopularMovies() {
-    return fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`).then(
-      response => response.json(),
-    );
-    // .then(response => response.results);
+  fetchMovies(page) {
+    return fetch(
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=${keyAPI}&page=${page}`,
+    ).then(resp => resp.json());
   }
 
   fetchMovies() {
@@ -19,6 +19,20 @@ export default class MoviesSearchApiService {
     )
       .then(response => response.json())
       .catch(error => error);
+  }
+
+  fetchModalCard() {
+    return fetch(`https://api.themoviedb.org/3/movie/${this.id}?api_key=${API_KEY}&language=en-US`)
+      .then(response => response.json())
+      .catch(error => error);
+  }
+
+  get currentId() {
+    return this.id;
+  }
+
+  set currentId(newId) {
+    this.id = newId;
   }
 
   get currentPage() {

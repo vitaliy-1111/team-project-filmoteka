@@ -2,8 +2,10 @@ const refs = {
   body: document.querySelector('body'),
   modalBtn: document.querySelector('.icon-close'),
   modalOverlay: document.querySelector('.modal-overlay'),
-  footerTeamOpenModal: document.querySelector('.footer-link')
-}
+
+  footerTeamOpenModal: document.querySelector('.footer-link'),
+};
+
 
 refs.footerTeamOpenModal.addEventListener('click', openModal);
 
@@ -14,11 +16,12 @@ function openModal() {
   document.addEventListener('keydown', onEscPress);
   refs.modalOverlay.addEventListener('click', onOverlayClick);
 }
-  
-function closeModal () {
+
+function closeModal() {
   refs.body.classList.remove('onOpenModal');
   refs.modalOverlay.classList.add('is-hidden');
   refs.modalBtn.removeEventListener('click', closeModal);
+
   document.removeEventListener('keydown', onEscPress);
   refs.modalOverlay.removeEventListener('click', onOverlayClick);
 }
@@ -36,3 +39,4 @@ function onOverlayClick(e) {
   }
   closeModal();
 }
+

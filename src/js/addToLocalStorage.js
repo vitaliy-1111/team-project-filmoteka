@@ -1,5 +1,16 @@
 import { fetchMovieById } from './fetch.js';
-import { renderLibraryGallaryQueue,renderLibraryGallaryWatched, renderEmptyGallery} from './renderLibrary.js';
+import { renderLibraryGallaryQueue, renderLibraryGallaryWatched, renderEmptyGallery } from './renderLibrary.js';
+import Notiflix from 'notiflix';
+
+Notiflix.Notify.init({
+    width: '300px',
+    position: 'right-top',
+    distance: '30px',
+    opacity: 1,
+    borderRadius: '5px',
+    timeout: 1000,
+})
+
 export function addToLocalStorage() {
   let watchedList = [];
   let queueList = [];
@@ -8,16 +19,20 @@ export function addToLocalStorage() {
     if (e.target.classList.contains("button-queue")) {
       addMovieToQueueLocalStorage(e.target.id);
       e.target.textContent = 'added to queue';
+      Notiflix.Notify.success('You enjoy movie successfully');
     }
     if (e.target.classList.contains("button-watched")) {
       addMovieToWatchedLocalStorage(e.target.id);
       e.target.textContent = 'added to watched';
+      Notiflix.Notify.success('You enjoy movie successfully');
     }
    if (e.target.classList.contains("button-watched--deleted")) {
-    onDeleteWatchedButton(e.target.id);
+     onDeleteWatchedButton(e.target.id);
+     Notiflix.Notify.info('You successfully deleted the movie');
   }
    if (e.target.classList.contains("button-queue--delete")) {
-    onDeleteQueueButton(e.target.id);
+     onDeleteQueueButton(e.target.id);
+     Notiflix.Notify.info('You successfully deleted the movie');
    }
   }
   function addMovieToWatchedLocalStorage(id) {
@@ -51,7 +66,7 @@ export function addToLocalStorage() {
           localMovies = JSON.parse(localStorage.getItem("watchedList"));
        
         if (localMovies === null) {
-      renderEmptyGallery();
+      renderEmptyGallery("watched");
     } else {
       renderLibraryGallaryWatched(localMovies);
   }
@@ -64,7 +79,7 @@ export function addToLocalStorage() {
         localStorage.setItem("queueList", JSON.stringify(localMovies));
         localMovies = JSON.parse(localStorage.getItem("queueList"));
 if (localMovies === null) {
-      renderEmptyGallery();
+      renderEmptyGallery("queue");
     } else {
       renderLibraryGallaryQueue(localMovies);
     }

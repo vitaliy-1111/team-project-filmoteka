@@ -36,7 +36,7 @@ function onLibrary(e) {
 
   const localMovies = JSON.parse(localStorage.getItem('watchedList'));
   if (localMovies === null) {
-    renderEmptyGallery();
+    renderEmptyGallery("watched");
   } else {
     renderLibraryGallaryWatched(localMovies);
   }
@@ -57,7 +57,7 @@ function onLibraryQueueBtn() {
   document.querySelector('.library-watched').classList.remove('library-button--active');
   const localMovies = JSON.parse(localStorage.getItem('queueList'));
   if (localMovies === null) {
-    renderEmptyGallery();
+    renderEmptyGallery("queue");
   } else {
     renderLibraryGallaryQueue(localMovies);
   }
@@ -68,7 +68,7 @@ function onLibraryWatchedBtn() {
   document.querySelector('.library-watched').classList.add('library-button--active');
   const localMovies = JSON.parse(localStorage.getItem('watchedList'));
   if (localMovies === null) {
-    renderEmptyGallery();
+    renderEmptyGallery("watched");
   } else {
     renderLibraryGallaryWatched(localMovies);
   }

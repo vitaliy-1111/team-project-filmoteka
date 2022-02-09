@@ -14,8 +14,16 @@ const refs = {
 
 refs.modal.addEventListener('click', onCloseModal);
 
-refs.cinemaModalCardOpen.addEventListener('click', openModal);
-// refs.cinemaModalCardClose.addEventListener('click', onCloseModal);
+// refs.cinemaModalCardOpen.addEventListener('click', openModal);
+// // refs.cinemaModalCardClose.addEventListener('click', onCloseModal);
+
+refs.body.addEventListener('click', onBody);
+
+function onBody(e) {
+  if (e.target.classList.contains('see-more')) {
+    openModal(e);
+  }
+}
 
 function openModal(e) {
   refs.body.classList.add('onOpenModal');
@@ -23,6 +31,7 @@ function openModal(e) {
   apiServiceFetchMovies.currentId = e.target.id;
   apiServiceFetchMovies.fetchModalCard().then(markupModalCard);
 }
+
 function onCloseModal(e) {
   console.log(e);
   refs.body.classList.remove('onOpenModal');

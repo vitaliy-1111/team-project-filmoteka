@@ -20,7 +20,7 @@ body.onOpenModal {
   overflow: hidden;
 }
 
-.modal {
+.modal__cinema {
   position: relative;
 
   min-width: 280px;
@@ -65,12 +65,11 @@ body.onOpenModal {
   &:hover {
     transform: scale(1.2);
   }
-
 }
 
-.cinema-card{
-    margin-top: 16px;
-    @media screen and (min-width: 768px) {
+.cinema-card {
+  margin-top: 16px;
+  @media screen and (min-width: 768px) {
     display: flex;
     justify-content: space-between;
     width: 560px;
@@ -80,10 +79,10 @@ body.onOpenModal {
   }
 }
 
-.poster{
-    margin-bottom: 30px;
-    border-radius: 5px;
-    @media screen and (min-width: 768px) {
+.poster {
+  margin-bottom: 30px;
+  border-radius: 5px;
+  @media screen and (min-width: 768px) {
     width: 264px;
     height: 373px;
   }
@@ -93,21 +92,21 @@ body.onOpenModal {
   }
 }
 
-.cinema-title{
-    font-family: Roboto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 23px;
+.cinema-title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 23px;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-.ratings-container{
-    display: flex;
+.ratings-container {
+  display: flex;
 }
 
-.ratings{
+.ratings {
   margin-right: 40px;
 
   @media screen and (min-width: 1024px) {
@@ -115,39 +114,37 @@ body.onOpenModal {
   }
 }
 
-
-
-.ratings-name{
-    margin-bottom: 10px;
-    &:nth-last-child(1){
-        margin-bottom: 20px;
-    }
-    font-family: Roboto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 16px;
-    color: #8C8C8C;
+.ratings-name {
+  margin-bottom: 10px;
+  &:nth-last-child(1) {
+    margin-bottom: 20px;
+  }
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8c8c8c;
 }
 
-.rating-value{
+.rating-value {
   margin-bottom: 10px;
-    &:nth-last-child(1){
-        margin-bottom: 20px;
-    }
-    font-family: Roboto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 16px;
+  &:nth-last-child(1) {
+    margin-bottom: 20px;
+  }
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
   color: #000;
 }
 
-.slash{
-  color: #8C8C8C;
+.slash {
+  color: #8c8c8c;
 }
 
-.current-value{
+.current-value {
   border: #ff6b01;
   border-width: 1px;
   border-radius: 5px;
@@ -158,60 +155,59 @@ body.onOpenModal {
 
   padding-left: 10px;
   padding-right: 10px;
-
 }
 
-.about-title{
-    font-family: Roboto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 16px;
+.about-title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.about-text{
-    font-family: Roboto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 20px;
+.about-text {
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 20px;
 
-    margin-bottom: 21px;
+  margin-bottom: 21px;
 }
 
-.modal-buttons-container{
-    display: flex;
-    justify-content: space-between;
-     
-    @media screen and (min-width: 1024px) {
+.modal-buttons-container {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (min-width: 1024px) {
     justify-content: flex-start;
   }
 }
 
-.modal-button{
-    width: 112px;
-    height: 44px;
-    margin-bottom: 41px;
+.modal-button {
+  width: 112px;
+  height: 44px;
+  margin-bottom: 41px;
 
-    font-family: Roboto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 12px;
-    line-height: 16px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 16px;
 
-    background-color: #fff;
-    border-width: 1px;
-    border-radius: 5px;
-    border-style: solid;
-    &:hover,
+  background-color: #fff;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  &:hover,
   :focus {
     background: #ff6b01;
-  box-shadow: rgba(255, 107, 1, 0.6);
-  border: none;
-  color: #fff;
-}
+    box-shadow: rgba(255, 107, 1, 0.6);
+    border: none;
+    color: #fff;
+  }
   @media screen and (min-width: 768px) {
     width: 125px;
   }
@@ -219,17 +215,16 @@ body.onOpenModal {
   @media screen and (min-width: 1024px) {
     width: 136px;
   }
-
 }
 
-.button-watched{
-    @media screen and (min-width: 1024px) {
+.button-watched {
+  @media screen and (min-width: 1024px) {
     margin-right: 15px;
   }
 }
 
-.description-container{
-    @media screen and (min-width: 768px) {
+.description-container {
+  @media screen and (min-width: 768px) {
     width: 264px;
   }
   @media screen and (min-width: 1024px) {

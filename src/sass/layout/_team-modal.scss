@@ -34,6 +34,11 @@ body.onOpenModal {
   background-color: $color-background;
 }
 
+.modal-title {
+  font-size: 28px;
+  text-align: center;
+}
+
 .modal__team {
   // min-height: 1000px;
 
@@ -70,6 +75,8 @@ body.onOpenModal {
 .card-set {
   display: flex;
   // display: none;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .card-wrapper {
@@ -82,7 +89,7 @@ body.onOpenModal {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 240px;
+  width: 290px;
   height: 350px;
   transform: translate(-50%, -50%);
   border-radius: 16px;
@@ -96,7 +103,7 @@ body.onOpenModal {
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 100%;
+    // height: 100%;
     z-index: 2;
     background-color: #000;
     transition: 500ms;

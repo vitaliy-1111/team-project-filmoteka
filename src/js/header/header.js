@@ -5,7 +5,7 @@ import {
   renderEmptyGallery,
 } from '../renderLibrary.js';
 import { renderStartPage } from '../gallery/render-page-gall';
-import { onSearch } from './header-search';
+import { onSearch, renderSearchPage } from './header-search';
 
 const debounce = require('lodash.debounce');
 
@@ -33,6 +33,7 @@ function onLibrary(e) {
   document.querySelector('.library-watched').addEventListener('click', onLibraryWatchedBtn);
   document.querySelector('.library-watched').classList.add('library-button--active');
   document.querySelector('.tui-pagination').classList.add('visually-hidden');
+
   const localMovies = JSON.parse(localStorage.getItem('watchedList'));
   if (localMovies === null) {
     renderEmptyGallery("watched");
@@ -50,6 +51,7 @@ function onHome(e) {
   document.querySelector('#search-form').addEventListener('input', debounce(onSearch, 1000));
   renderStartPage();
 }
+
 function onLibraryQueueBtn() {
   document.querySelector('.library-queue').classList.add('library-button--active');
   document.querySelector('.library-watched').classList.remove('library-button--active');
@@ -60,6 +62,7 @@ function onLibraryQueueBtn() {
     renderLibraryGallaryQueue(localMovies);
   }
 }
+
 function onLibraryWatchedBtn() {
   document.querySelector('.library-queue').classList.remove('library-button--active');
   document.querySelector('.library-watched').classList.add('library-button--active');

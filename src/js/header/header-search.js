@@ -19,6 +19,7 @@ const homepPaginationPage = homePagination.getCurrentPage();
 const refs = {
   form: document.querySelector('#search-form'),
   error: document.querySelector('.form__error-message'),
+  loader: document.querySelector('.gallery-spinner'),
 };
 
 refs.form.addEventListener('input', debounce(onSearch, 1000));
@@ -33,20 +34,26 @@ export function onSearch(e) {
     return;
   }
   apiServiceFetchMovies.query = e.target.value;
+
   renderSearchPage();
 }
 
-function renderSearchPage() {
+export function renderSearchPage() {
+  refs.loader.classList.remove('visually-hidden');
   apiServiceFetchMovies.fetchMovies(homepPaginationPage).then(response => {
     if (response.results.length === 0) {
       refs.error.textContent = 'Nothing found for your request';
+      refs.loader.classList.add('visually-hidden');
       return;
     }
     homePagination.reset(response.total_pages);
     MoviesCards(response.results);
+    refs.loader.classList.add('visually-hidden');
     homePagination.on('afterMove', event => {
+      refs.loader.classList.remove('visually-hidden');
       apiServiceFetchMovies.currentPage = event.page;
       apiServiceFetchMovies.fetchMovies(event.page).then(response => MoviesCards(response.results));
+      refs.loader.classList.add('visually-hidden');
     });
   });
 }

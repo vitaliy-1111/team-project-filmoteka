@@ -17,3 +17,5 @@ import { addToLocalStorage } from './js/addToLocalStorage';
 addToLocalStorage();
 
 
+// localStorage.removeItem("watchedList")
+// localStorage.removeItem("queueList")

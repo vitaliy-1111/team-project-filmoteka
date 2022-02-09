@@ -71,7 +71,7 @@ export function renderLibraryGallaryQueue(results) {
  document.querySelector(".card-list").innerHTML = markup; 
 };
 
-function checkLocalStorageWatched(id) {
+export function checkLocalStorageWatched(id) {
   let localWatchedList = JSON.parse(localStorage.getItem("watchedList"));
   localWatchedList === null ? localWatchedList : watchedList = [...localWatchedList];
   if ((watchedList.find(item => item.id == id) && true) || false) {
@@ -79,7 +79,7 @@ function checkLocalStorageWatched(id) {
     return watched;
   }
 }
-function checkLocalStorageQueue(id){
+export function checkLocalStorageQueue(id){
   const localQueueList = JSON.parse(localStorage.getItem("queueList"));
   localQueueList === null ? localQueueList : queueList = [...localQueueList];
   if ((queueList.find(item => item.id == id) && true) || false) {

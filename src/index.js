@@ -3,7 +3,7 @@ import './js/scrollGoUp';
 
 import defaultExport from './js/team-modal';
 
-// import "./js/cinema-modal";
+import './js/cinema-modal';
 // import { renderModalCinemaCard } from './js/render-cinema-modal';
 
 import { fetchCard } from './js/gallery/render-page-gall';
@@ -15,7 +15,6 @@ import { addToLocalStorage } from './js/addToLocalStorage';
 
 // renderModalCinemaCard();
 addToLocalStorage();
-
 
 // localStorage.removeItem("watchedList")
 // localStorage.removeItem("queueList")

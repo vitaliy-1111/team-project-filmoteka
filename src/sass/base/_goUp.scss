@@ -16,6 +16,7 @@ html {
   @include transition-base(transform);
   background-color: transparent;
   border: none;
+  cursor: pointer;
   &:hover,
   :focus {
     transform: scale(1.2) rotate(90deg);

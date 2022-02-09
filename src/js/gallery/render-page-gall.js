@@ -20,7 +20,6 @@ renderStartPage();
 export function renderStartPage() {
   loader.classList.remove('visually-hidden');
   fetchMovies(homepPaginationPage).then(response => {
-    console.log();
     homePagination.reset(response.total_pages);
     MoviesCards(response.results);
     loader.classList.add('visually-hidden');

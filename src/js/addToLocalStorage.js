@@ -12,7 +12,6 @@ export function addToLocalStorage() {
     }
   }
   function addMovieToWatchedLocalStorage(id) {
-    console.log(JSON.parse(localStorage.getItem("watchedList")))
     const localWatchedList = JSON.parse(localStorage.getItem("watchedList"));
     localWatchedList === null ? localWatchedList : watchedList = [...localWatchedList];
   

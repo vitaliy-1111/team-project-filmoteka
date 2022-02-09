@@ -1,5 +1,5 @@
 import { markupLibrary, markupHome } from './markup';
-import { renderLibraryGallary, renderEmptyGallery} from '../renderLibrary.js';
+import { renderLibraryGallaryQueue,renderLibraryGallaryWatched, renderEmptyGallery} from '../renderLibrary.js';
 import {renderStartPage} from '../gallery/render-page-gall'
 
 const refs = {
@@ -28,7 +28,7 @@ function onLibrary(e) {
   if (localMovies === null) {
     renderEmptyGallery();
   } else {
-    renderLibraryGallary(localMovies);
+    renderLibraryGallaryWatched(localMovies);
   }
 }
 
@@ -39,6 +39,7 @@ function onHome(e) {
   document.querySelector('.menu__list-link--library').addEventListener('click', onLibrary);
   document.querySelector('.menu__logo').addEventListener('click', onHome);
   renderStartPage();
+  
 }
 function onLibraryQueueBtn() {
     document.querySelector(".library-queue").classList.add("library-button--active");
@@ -47,7 +48,7 @@ function onLibraryQueueBtn() {
     if (localMovies === null) {
       renderEmptyGallery();
     } else {
-      renderLibraryGallary(localMovies, 'queue');
+      renderLibraryGallaryQueue(localMovies);
     }
 }
 function onLibraryWatchedBtn() {
@@ -57,6 +58,6 @@ function onLibraryWatchedBtn() {
   if (localMovies === null) {
       renderEmptyGallery();
     } else {
-      renderLibraryGallary(localMovies, 'watched');
+      renderLibraryGallaryWatched(localMovies);
   }
 }

@@ -71,3 +71,7 @@
   display: flex;
   justify-content: center;
 }
+.library-button--active {
+  background-color: $color-accent;
+  border: none;
+}

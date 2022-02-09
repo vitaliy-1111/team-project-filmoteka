@@ -1,4 +1,5 @@
 import './js/header/header';
+import './js/scrollGoUp';
 
 import defaultExport from './js/team-modal';
 
@@ -14,6 +15,5 @@ import { addToLocalStorage } from './js/addToLocalStorage';
 
 // renderModalCinemaCard();
 addToLocalStorage();
-
 
 

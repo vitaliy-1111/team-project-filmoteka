@@ -24,8 +24,8 @@ export function MoviesCards (results){
               <span class="content_average ${vote_average === 0 ? vote_average='visually-hidden' : vote_average}">${vote_average}</span>
             </div>              
             <div class="gallery-buttons">
-              <button class="image-btn" id="${id}" data-type="watched">Watched</button>
-              <button class="image-btn" id="${id}" data-type="queue">Queue</button>
+              <button class="image-btn button-watched" id="${id}" data-type="watched">Watched</button>
+              <button class="image-btn button-queue" id="${id}" data-type="queue">Queue</button>
               <button class="image-btn see-more" id="${id}" data-type="see more">See more...</button>
             </div>
             <div class="content">

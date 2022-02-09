@@ -39,13 +39,14 @@ export function onSearch(e) {
 }
 
 export function renderSearchPage() {
-  refs.loader.classList.remove('visually-hidden');
+  
   apiServiceFetchMovies.fetchMovies(homepPaginationPage).then(response => {
     if (response.results.length === 0) {
       refs.error.textContent = 'Nothing found for your request';
       refs.loader.classList.add('visually-hidden');
       return;
     }
+    refs.loader.classList.remove('visually-hidden');
     homePagination.reset(response.total_pages);
     MoviesCards(response.results);
     refs.loader.classList.add('visually-hidden');

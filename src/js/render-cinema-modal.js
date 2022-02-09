@@ -95,8 +95,8 @@ export function renderModalCinemaCard() {
                 </div>
 
                 <div class="modal-buttons-container">
-                    <button class="modal-button button-watched">ADD TO WATCHED</button>
-                    <button class="modal-button">ADD TO QUEUE</button>
+                    <button class="modal-button button-watched" id="${id}">ADD TO WATCHED</button>
+                    <button class="modal-button button-queue" id="${id}">ADD TO QUEUE</button>
                 </div>
             </div>
               </div>`;
@@ -141,8 +141,8 @@ export function markupModalCard(results) {
                 </div>
 
                 <div class="modal-buttons-container">
-                    <button class="modal-button button-watched">ADD TO WATCHED</button>
-                    <button class="modal-button">ADD TO QUEUE</button>
+                    <button class="modal-button button-watched" id="${id}">ADD TO WATCHED</button>
+                    <button class="modal-button button-queue" id="${id}">ADD TO QUEUE</button>
                 </div>
                 
             </div>

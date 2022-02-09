@@ -1,7 +1,12 @@
   let watchedList = [];
   let queueList = [];
 export function renderEmptyGallery() {
-  const gallery = `<li class="cinema-gallery__item">Empty LocalStorage</li>`;
+  const gallery = 
+  `<p class="empty-library">Your library is empty!!!</p>
+    <li class="cinema-gallery__item">  
+      <img class="library-img" src="https://images2.minutemediacdn.com/image/upload/c_crop,h_1191,w_2121,x_0,y_2/f_auto,q_auto,w_1100/v1554992973/shape/mentalfloss/75176-istock-157732085.jpg"
+          alt="Empty image" loading="lazy">          
+    </li>`;
   document.querySelector(".card-list").innerHTML = gallery;
 }
 export function renderLibraryGallaryWatched(results) {

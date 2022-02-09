@@ -1,5 +1,6 @@
 import { allGenres, renderGenres } from './gallery/genres';
 import { fetchMovies } from './gallery/fetch-gallery';
+import { checkLocalStorageWatched, checkLocalStorageQueue } from './renderLibrary';
 
 const refs = {
   cardList: document.querySelector('.card-item'),
@@ -108,6 +109,8 @@ export function renderModalCinemaCard() {
 export function markupModalCard(results) {
   const { title, id, poster_path, genres, vote_average, vote_count, popularity, overview } =
     results;
+  const watched = checkLocalStorageWatched(id);
+  const queue = checkLocalStorageQueue(id);
   const genreName = genres.map(ganre => ganre.name);
   const murkup = `<div class="cinema-card">
   <img
@@ -141,8 +144,8 @@ export function markupModalCard(results) {
                 </div>
 
                 <div class="modal-buttons-container">
-                    <button class="modal-button button-watched" id="${id}">ADD TO WATCHED</button>
-                    <button class="modal-button button-queue" id="${id}">ADD TO QUEUE</button>
+                    <button class="modal-button button-watched" id="${id}">${watched || 'add to Watched'}</button>
+                    <button class="modal-button button-queue" id="${id}">${queue || 'add to queue'}</button>
                 </div>
                 
             </div>

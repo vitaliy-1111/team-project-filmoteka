@@ -26,8 +26,8 @@ export function markupLibrary() {
       </ul>
     </div>
     <div class="btn-box">
-      <button class="library-btn">Watched</button>
-      <button class="library-btn">Queue</button>
+      <button class="library-btn library-watched">Watched</button>
+      <button class="library-btn library-queue">Queue</button>
     </div>
   </div>`;
 }

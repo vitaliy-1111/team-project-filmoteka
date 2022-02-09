@@ -5,6 +5,8 @@ const refs = {
   cardList: document.querySelector('.card-list'),
   contentText: document.querySelector('.content')
 }
+let watchedList = [];
+let queueList = [];
 
 export function MoviesCards (results){
   const markup = results.map(
@@ -13,6 +15,9 @@ export function MoviesCards (results){
        if (!release_date) {
         release_date = ' ';
       }
+      const watched = checkLocalStorageWatched(id);
+      const queue = checkLocalStorageQueue(id);
+
       const year = release_date.slice(0, 4) 
       let URL = 'https://image.tmdb.org/t/p/w500';
       if (poster_path === null) {
@@ -24,8 +29,8 @@ export function MoviesCards (results){
               <span class="content_average ${vote_average === 0 ? vote_average='visually-hidden' : vote_average}">${vote_average}</span>
             </div>              
             <div class="gallery-buttons">
-              <button class="image-btn button-watched" id="${id}" data-type="watched">Watched</button>
-              <button class="image-btn button-queue" id="${id}" data-type="queue">Queue</button>
+              <button class="image-btn button-watched" id="${id}" data-type="watched">${watched || 'add to watched'}</button>
+              <button class="image-btn button-queue" id="${id}" data-type="queue">${queue || 'add to queue'}</button>
               <button class="image-btn see-more" id="${id}" data-type="see more">See more...</button>
             </div>
             <div class="content">
@@ -37,4 +42,19 @@ export function MoviesCards (results){
 };
 
 
-
+function checkLocalStorageWatched(id) {
+  let localWatchedList = JSON.parse(localStorage.getItem("watchedList"));
+  localWatchedList === null ? localWatchedList : watchedList = [...localWatchedList];
+  if ((watchedList.find(item => item.id == id) && true) || false) {
+    const watched = 'added to watched';
+    return watched;
+  }
+}
+function checkLocalStorageQueue(id){
+  const localQueueList = JSON.parse(localStorage.getItem("queueList"));
+  localQueueList === null ? localQueueList : queueList = [...localQueueList];
+  if ((queueList.find(item => item.id == id) && true) || false) {
+    const queue = 'added to queue';
+    return queue;
+  }
+}

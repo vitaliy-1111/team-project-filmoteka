@@ -44,12 +44,12 @@ export function addToLocalStorage() {
   }
    function onDeleteWatchedButton(id) {
           let localMovies = JSON.parse(localStorage.getItem("watchedList"));
-          console.log(localMovies);
+         
           localMovies = localMovies.filter((movie) => movie.id != id);
-          console.log(localMovies)
+          
           localStorage.setItem("watchedList", JSON.stringify(localMovies));
           localMovies = JSON.parse(localStorage.getItem("watchedList"));
-        console.log(localMovies)
+       
         if (localMovies === null) {
       renderEmptyGallery();
     } else {

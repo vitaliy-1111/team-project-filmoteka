@@ -24,7 +24,7 @@ const refs = {
 refs.form.addEventListener('input', debounce(onSearch, 1000));
 
 function onSearch(e) {
-  console.log(e.target.value);
+  
   if (e.target.value.trim() === '') {
     refs.error.textContent = '';
     renderStartPage();

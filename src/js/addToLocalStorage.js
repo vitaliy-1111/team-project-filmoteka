@@ -65,7 +65,7 @@ export function addToLocalStorage() {
           localStorage.setItem("watchedList", JSON.stringify(localMovies));
           localMovies = JSON.parse(localStorage.getItem("watchedList"));
        
-        if (localMovies === null) {
+        if (localMovies === null || localMovies.length === 0) {
       renderEmptyGallery("watched");
     } else {
       renderLibraryGallaryWatched(localMovies);
@@ -78,7 +78,7 @@ export function addToLocalStorage() {
         localMovies = localMovies.filter((movie) => movie.id != id);
         localStorage.setItem("queueList", JSON.stringify(localMovies));
         localMovies = JSON.parse(localStorage.getItem("queueList"));
-if (localMovies === null) {
+if (localMovies === null || localMovies.length === 0) {
       renderEmptyGallery("queue");
     } else {
       renderLibraryGallaryQueue(localMovies);

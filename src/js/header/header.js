@@ -35,7 +35,7 @@ function onLibrary(e) {
   document.querySelector('.tui-pagination').classList.add('visually-hidden');
 
   const localMovies = JSON.parse(localStorage.getItem('watchedList'));
-  if (localMovies === null) {
+  if (localMovies === null || localMovies.length === 0) {
     renderEmptyGallery("watched");
   } else {
     renderLibraryGallaryWatched(localMovies);
@@ -56,7 +56,7 @@ function onLibraryQueueBtn() {
   document.querySelector('.library-queue').classList.add('library-button--active');
   document.querySelector('.library-watched').classList.remove('library-button--active');
   const localMovies = JSON.parse(localStorage.getItem('queueList'));
-  if (localMovies === null) {
+  if (localMovies === null || localMovies.length === 0) {
     renderEmptyGallery("queue");
   } else {
     renderLibraryGallaryQueue(localMovies);
@@ -67,7 +67,7 @@ function onLibraryWatchedBtn() {
   document.querySelector('.library-queue').classList.remove('library-button--active');
   document.querySelector('.library-watched').classList.add('library-button--active');
   const localMovies = JSON.parse(localStorage.getItem('watchedList'));
-  if (localMovies === null) {
+  if (localMovies === null || localMovies.length === 0) {
     renderEmptyGallery("watched");
   } else {
     renderLibraryGallaryWatched(localMovies);

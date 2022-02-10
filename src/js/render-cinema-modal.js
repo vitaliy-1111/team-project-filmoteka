@@ -86,7 +86,7 @@ export function renderModalCinemaCard() {
                         <p class="rating-value"> <span class="current-value">${vote_average}/span> <span class="slash">/</span> ${vote_count}</p>
                         <p class="rating-value">${popularity}</p>
                         <p class="rating-value">${title}</p>
-                        <p class="rating-value">${genre_ids}</p>
+                        <p class="rating-value">${genre_ids.join(" ")}</p>
                     </div>
                 </div>
 
@@ -109,6 +109,10 @@ export function renderModalCinemaCard() {
 export function markupModalCard(results) {
   const { title, id, poster_path, genres, vote_average, vote_count, popularity, overview } =
     results;
+   let URL = 'https://image.tmdb.org/t/p/w500';
+      if (poster_path === null) {
+        URL = 'https://ik.imagekit.io/tc8jxffbcvf/default-movie-portrait_EmJUj9Tda5wa.jpg?tr=fo-auto,di-%27;';
+      }
   const watched = checkLocalStorageWatched(id);
   const queue = checkLocalStorageQueue(id);
   const genreName = genres.map(ganre => ganre.name);
@@ -118,7 +122,7 @@ export function markupModalCard(results) {
       class="modal-icon-close"
       src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTggOCAxNCAxNE04IDIyIDIyIDgiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9zdmc+"
     />
-        <img class="poster" src="https://image.tmdb.org/t/p/w500${poster_path}" alt="${title}" id="${id}" loading="lazy" width="240" height="356">
+        <img class="poster" src="${URL}${poster_path || ''}" alt="${title}" id="${id}" loading="lazy" width="240" height="356">
         
             <div class="description-container">
                 <h1 class="cinema-title">${title}</h1>
@@ -134,7 +138,7 @@ export function markupModalCard(results) {
                         <p class="rating-value"> <span class="current-value">${vote_average}</span> / ${vote_count}</p>
                         <p class="rating-value">${popularity}</p>
                         <p class="rating-value">${title}</p>
-                        <p class="rating-value">${genreName}</p>
+                        <p class="rating-value">${genreName.join(', ') || ' '}</p>
                     </div>
                 </div>
 

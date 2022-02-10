@@ -48,4 +48,4 @@ var t,e=arguments[3];!function(e,i){"function"==typeof t&&t.amd?t([],function(){
 },{"./fetch.js":"spyz","./renderLibrary.js":"saTP","notiflix":"W3Ap"}],"Focm":[function(require,module,exports) {
 "use strict";require("./js/header/header"),require("./js/scrollGoUp");var e=s(require("./js/team-modal"));require("./js/cinema-modal");var r=require("./js/gallery/render-page-gall");require("./js/header/header-search"),require("./sass/main.scss"),require("./js/header/library-header");var a=require("./js/addToLocalStorage");function s(e){return e&&e.__esModule?e:{default:e}}(0,a.addToLocalStorage)();
 },{"./js/header/header":"N0LX","./js/scrollGoUp":"d1vX","./js/team-modal":"SVxB","./js/cinema-modal":"nisy","./js/gallery/render-page-gall":"ekai","./js/header/header-search":"GZS3","./sass/main.scss":"clu1","./js/header/library-header":"UYQs","./js/addToLocalStorage":"ofXU"}]},{},["Focm"], null)
-//# sourceMappingURL=/team-project-filmoteka/src.da4ed3c3.js.map
+//# sourceMappingURL=/team-project-filmoteka/src.f15a342b.js.map

@@ -25,7 +25,7 @@ export function MoviesCards (results){
       }
            return `<li class="list card-item">
             <div class="image_thumb">
-              <img class="image_thumb-img" src="${URL}${poster_path || ''}" alt="${title}" id="${id}" loading="lazy">
+              <img class="image_thumb-img" src="${URL}${poster_path || ''}" alt="${title}" id="${id}" loading="lazy" >
               <span class="content_average ${vote_average === 0 ? vote_average='visually-hidden' : vote_average}">${vote_average}</span>
             </div>              
             <div class="gallery-buttons">

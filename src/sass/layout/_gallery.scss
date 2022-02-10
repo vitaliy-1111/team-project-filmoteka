@@ -98,7 +98,7 @@
   }
 
   border-radius: 5px;
-  cursor: pointer;
+  // cursor: pointer;
 
   transform: scale(1);
   transition: transform 250ms linear;
@@ -133,6 +133,7 @@
   text-transform: uppercase;
   margin-bottom: 5px;
   cursor: pointer;
+
   @media screen and (min-width: 768px) {
     width: 136px;
     height: 44px;

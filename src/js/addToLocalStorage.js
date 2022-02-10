@@ -19,12 +19,12 @@ export function addToLocalStorage() {
     if (e.target.classList.contains("button-queue")) {
       addMovieToQueueLocalStorage(e.target.id);
       e.target.textContent = 'added to queue';
-      Notiflix.Notify.success('You enjoy movie successfully');
+      
     }
     if (e.target.classList.contains("button-watched")) {
       addMovieToWatchedLocalStorage(e.target.id);
       e.target.textContent = 'added to watched';
-      Notiflix.Notify.success('You enjoy movie successfully');
+      
     }
    if (e.target.classList.contains("button-watched--deleted")) {
      onDeleteWatchedButton(e.target.id);
@@ -43,6 +43,7 @@ export function addToLocalStorage() {
       fetchMovieById(id).then(resp => {
         watchedList.push(resp);
         localStorage.setItem("watchedList", JSON.stringify(watchedList));
+        Notiflix.Notify.success('You enjoy movie successfully');
       })
     }
   }
@@ -54,6 +55,7 @@ export function addToLocalStorage() {
       fetchMovieById(id).then(resp => {
         queueList.push(resp);
         localStorage.setItem("queueList", JSON.stringify(queueList));
+        Notiflix.Notify.success('You enjoy movie successfully');
       })
     }
   }

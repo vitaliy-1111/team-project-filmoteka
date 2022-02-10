@@ -148,8 +148,8 @@ export function markupModalCard(results) {
                 </div>
 
                 <div class="modal-buttons-container">
-                    <button class="modal-button button-watched" id="${id}">${watched || 'add to Watched'}</button>
-                    <button class="modal-button button-queue" id="${id}">${queue || 'add to queue'}</button>
+                    <button class="modal-button button-watched" id="${id}" aria-label="watched">${watched || 'add to Watched'}</button>
+                    <button class="modal-button button-queue" id="${id}" aria-label="queue">${queue || 'add to queue'}</button>
                 </div>
                 
             </div>

@@ -29,9 +29,9 @@ export function renderLibraryGallaryWatched(results) {
               <span class="content_average ${vote_average === 0 ? vote_average='visually-hidden' : vote_average}">${vote_average}</span>
             </div>              
             <div class="gallery-buttons">
-            <button class="image-btn button-queue" id="${id}" data-type="queue">${queue || 'add to Queue'}</button>
-              <button class="image-btn button-watched--deleted" id="${id}" data-type="watched">delete from Watched</button>              
-              <button class="image-btn see-more" id="${id}" data-type="see more">See more...</button>
+            <button class="image-btn button-queue" id="${id}" data-type="queue" aria-label="queue">${queue || 'add to Queue'}</button>
+              <button class="image-btn button-watched--deleted" id="${id}" data-type="watched" aria-label="delete">delete from Watched</button>              
+              <button class="image-btn see-more" id="${id}" data-type="see more" aria-label="see more">See more...</button>
             </div>
             <div class="content">
               <h2 class="content_title">${title}</h2>
@@ -59,9 +59,9 @@ export function renderLibraryGallaryQueue(results) {
               <span class="content_average ${vote_average === 0 ? vote_average='visually-hidden' : vote_average}">${vote_average}</span>
             </div>              
             <div class="gallery-buttons">
-              <button class="image-btn button-watched" id="${id}" data-type="watched">${watched || 'add to Watched'}</button>
-              <button class="image-btn button-queue--delete" id="${id}" data-type="queue">delete from Queue</button>
-              <button class="image-btn see-more" id="${id}" data-type="see more">See more...</button>
+              <button class="image-btn button-watched" id="${id}" data-type="watched" aria-label="watched">${watched || 'add to Watched'}</button>
+              <button class="image-btn button-queue--delete" id="${id}" data-type="queue" aria-label="delete">delete from Queue</button>
+              <button class="image-btn see-more" id="${id}" data-type="see more" aria-label="see more">See more...</button>
             </div>
             <div class="content">
               <h2 class="content_title">${title}</h2>
